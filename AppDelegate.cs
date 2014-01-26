@@ -14,11 +14,12 @@ namespace Xamarin.Auth.Sample.iOS
 	{
 		void LoginToFacebook (bool allowCancel)
 		{
+
 			var auth = new OAuth2Authenticator (
-				clientId: "fbId",
+				clientId: ResourceExternal.ClientId,
 				scope: "",
-				authorizeUrl: new Uri ("https://m.facebook.com/dialog/oauth/"),
-				redirectUrl: new Uri ("http://www.facebook.com/connect/login_success.html"));
+				authorizeUrl: new Uri (ResourceExternal.LoginUrl),
+				redirectUrl: new Uri (ResourceExternal.CallBackUrl));
 
 			auth.AllowCancel = allowCancel;
 
